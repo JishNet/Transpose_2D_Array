@@ -15,11 +15,14 @@ class Main {
     static void taransposearry(int[][]a,int row){
         int ans[][] = new int[row ][row] ;
         for(int i=0;i<a.length ;i++){
-            for(int j=0 ;j<a.length ;j++){
-                ans[j][i] = a[i][j] ;
+            for(int j=i ;j<a.length ;j++){
+               int  temp  = a[i][j] ;
+               a[i][j] = a[j][i] ;
+               a[j][i] = temp ;
+
             }
         }
-        printarry(ans);
+        printarry(a);
 
     }
     public static void main(String[] args) {
@@ -33,6 +36,7 @@ class Main {
                 arr[i][j] = sc.nextInt();
 
             }
+            System.out.println("");
         }
         taransposearry(arr,row);
 
